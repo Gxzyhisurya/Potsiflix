@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segera Hadir</title>
+
+<style>
+/* Navigasi Overlay */
+.nav-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.95); /* hitam panjang */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Tombol Navigasi */
+.nav-btn img {
+  width: 49px;
+  height: 50px;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+/* Efek hover */
+.nav-btn img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
+    padding-bottom:70px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* VIDEO 16:9 */
+.video-box {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.video-box iframe,
+.video-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MOVIE LOGO */
+.movie-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.movie-logo {
+    width: 55%;
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+.movie-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ICON BUTTON */
+.icon-btn {
+    text-align: center;
+    font-size: 8px;
+}
+
+.icon-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.icon-btn img {
+    width: 48px;
+    margin-bottom: 5px;
+}
+
+/* DESCRIPTION */
+.release {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.genre {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.genre {
+    margin-top: 10px;
+    margin-bottom: 30px; /* ← JARAK KE BAWAH */
+    font-size: 14px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Segera Hadir</h1>
+
+<!-- VIDEO (PILIH SALAH SATU) -->
+
+<div class="video-box">
+    <a href="" target="_blank">
+        <img src="leuweungsetanthum.jpg" alt="Video Thumbnail">
+    </a>
+</div>
+<!-- OPSI 2: Google Drive -->
+<!--
+<div class="video-box">
+    <iframe src="https://drive.google.com/file/d/FILE_ID/preview"
+        frameborder="0"
+        allowfullscreen></iframe>
+</div>
+-->
+
+<!-- OPSI 3: IMG -->
+<!--
+<div class="video-box">
+    <img src="thumbnail-video.jpg" alt="Video">
+</div>
+-->
+
+<div class="movie-row">
+
+    <!-- MOVIE TITLE LOGO -->
+    <div class="movie-logo">
+        <img src="leuweungsetanlogo.jpg" alt="Movie Logo">
+    </div>
+
+    <!-- REMINDER -->
+    <div class="icon-btn">
+        <a href="https://www.instagram.com/potretaksi.id?igsh=NXNrNG42MHphcnJm">
+            <img src="reminder.png" alt="Reminder">
+            <div>Reminder me</div>
+        </a>
+    </div>
+
+    <!-- BACK HOME -->
+    <div class="icon-btn">
+        <a href="potsiflix.html">
+            <img src="backtun.png" alt="Back">
+            <div>Back home page</div>
+        </a>
+    </div>
+
+</div>
+
+<div class="release">Segera Hadir 2026</div>
+
+<div class="desc">
+Beberapa anak bermain petak umpet di awal malam yakni waktu maghrib dan tanpa mereka sadari malapetaka menimpa mereka karna melanggar suatu hal dan tak hanya itu, jiwa mereka kini menjadi santapan entitas jahat yang haus darah, tapi apa hanya karna melanggar satu hal saja sampai mereka mengalami kematian sadis ? atau ada hal lain yang lebih jahat?
+</div>
+
+<div class="genre">Horor • Thiller • 18+</div>
+
+<!-- VIDEO (PILIH SALAH SATU) -->
+
+<div class="video-box">
+    <a href="" target="_blank">
+        <img src="easfthumbnail.jpg" alt="Video Thumbnail">
+    </a>
+</div>
+<!-- OPSI 2: Google Drive -->
+<!--
+<div class="video-box">
+    <iframe src="https://drive.google.com/file/d/FILE_ID/preview"
+        frameborder="0"
+        allowfullscreen></iframe>
+</div>
+-->
+
+<!-- OPSI 3: IMG -->
+<!--
+<div class="video-box">
+    <img src="thumbnail-video.jpg" alt="Video">
+</div>
+-->
+
+<div class="movie-row">
+
+    <!-- MOVIE TITLE LOGO -->
+    <div class="movie-logo">
+        <img src="easflogo.jpg" alt="Movie Logo">
+    </div>
+
+    <!-- REMINDER -->
+    <div class="icon-btn">
+        <a href="https://www.instagram.com/potretaksi.id?igsh=NXNrNG42MHphcnJm">
+            <img src="reminder.png" alt="Reminder">
+            <div>Reminder me</div>
+        </a>
+    </div>
+
+    <!-- BACK HOME -->
+    <div class="icon-btn">
+        <a href="potsiflix.html">
+            <img src="backtun.png" alt="Back">
+            <div>Back home page</div>
+        </a>
+    </div>
+
+</div>
+
+<div class="release">Segera Hadir 2026</div>
+
+<div class="desc">
+sekumpulan content creator melakulan penelusuran di pabrik gula bekas atau sering di sebut GONJIAM, yang dimana pabrik gula bekas itu diyakini warga sebagai pabrik paling angker di jakarta ,hingga ketika content creator ini melakukan penelusuran disana tidak hanya hal buruk saja yang menimpa mereka, tapi juga tragedi yang tak terlupakan bagi mereka
+</div>
+
+<div class="genre">Horor • Dokumenter • 18+</div>
+
+          <!-- Navigasi Overlay -->
+<div class="nav-overlay">
+  <a href="potsiflix.html" target="_blank" class="nav-btn">
+    <img src="rumahku.png" alt="Home">
+  </a>
+  
+    <a href="searchpage.html" target="_blank" class="nav-btn">
+    <img src="Searchbtn.png" alt="Trending">
+  </a>
+
+  <a href="upcoming.html" target="_blank" class="nav-btn">
+    <img src="enyarrek.png" alt="Trending">
+  </a>
+
+  <a href="infopage.html" target="_blank" class="nav-btn">
+    <img src="inpone.png" alt="Profile">
+  </a>
+</div>
+
+
+</body>
+</html>

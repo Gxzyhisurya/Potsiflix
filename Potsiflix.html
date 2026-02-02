@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POTRET AKSI ID</title>
+
+  <!-- Import Bebas Neue font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #000;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;     /* ⬅️ BUKAN 100vh */
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;     /* ⬅️ BIAR NGIKUT POSTER */
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 12px;     /* ⬅️ jarak ke poster */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+/* GENRE */
+.movie-genre {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+/* BUTTON ROW */
+.action-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* PLAY */
+.play-btn {
+  background: #fff;
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* ICON BUTTON */
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* LIKE COUNT */
+.icon-btn span {
+  display: block;
+  font-size: 11px;
+  margin-top: 2px;
+}
+  .section-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+/* ROW (SAMA SEPERTI TRENDING NOW) */
+.movie-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.movie-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.movie-card {
+  position: relative;
+  min-width: 140px;      /* ⬅️ SAMAKAN dengan Trending */
+  aspect-ratio: 3 / 4;  /* POSTER FILM */
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* IMAGE */
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ANGKA BESAR */
+.rank {
+  position: absolute;
+  left: -6px;
+  bottom: -18px;
+  font-size: 90px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 4px red;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* HOVER */
+.play-btn:hover {
+  background: #f2f2f2;
+}
+  /* Navigasi Overlay */
+.nav-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.95); /* hitam panjang */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Tombol Navigasi */
+.nav-btn img {
+  width: 49px;
+  height: 50px;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+/* Efek hover */
+.nav-btn img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #000000 20%,
+    #000000 55%,
+    #0a0f2c 90%
+  );
+
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+    /* Search container */
+    .search-container {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    .search-container input[type="text"] {
+      flex-grow: 1;
+      padding: 10px 8px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      outline: none;
+    }
+
+    .search-container button {
+      background: #e50914;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+      font-size: 1em;
+      transition: background 0.2s ease;
+    }
+    .search-container button:hover {
+      background: #b1060f;
+    }
+
+    /* Back Button */
+    .back-button-container {
+      display: none; /* Hidden by default */
+      text-align: center;
+      margin: 20px 0;
+      margin-bottom: 80px;/* Adds extra space below the button */
+    }
+    .back-button {
+      background: #e50914;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .back-button:hover {
+      background: #b1060f;
+    }
+
+    /* Sections */
+    section {
+      margin: 30px 20px 30px 20px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1,1em;
+    }
+
+    /* Movie grid */
+    .movie-row {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    .movie-row::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    /* Movie Item */
+    .movie-item {
+      flex: 0 0 auto;
+      width: 135px; /* 3:4 ratio */
+      aspect-ratio: 3 / 4;
+      margin-right: 10px;
+      cursor: pointer;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      box-shadow: 0 0 3px #000;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+
+    .movie-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+    .movie-label {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background-color: #e50914;
+      padding: 2px 6px;
+      font-size: 0.75em;
+      font-weight: bold;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Episode Page */
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .episode-item {
+      display: flex;
+      align-items: center;
+      background-color: #222;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 0 5px #000;
+      transition: transform 0.2s ease;
+    }
+    .episode-item:hover {
+      transform: scale(1.02);
+    }
+
+    .episode-thumbnail {
+      width: 160px; /* 16:9 aspect ratio */
+      height: 90px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .episode-info {
+      flex-grow: 1;
+    }
+
+    .episode-title {
+      font-family: Arial, sans-serif; /* Sans Serif font */
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .play-button {
+      background: #e50914;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      font-size: 0.9em;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .play-button:hover {
+      background: #b1060f;
+    }
+    
+/* MATIKAN SEMUA TOMBOL BACK */
+.back-button-container {
+  display: none !important;
+}
+
+section[data-category="Trending Now"] .movie-row {
+  margin-bottom: 30px;
+}
+
+.episodes-grid {
+  margin-bottom: 110px;
+}
+/* SEMBUNYIKAN KOLOM SEARCH */
+.search-container {
+  display: none;
+}
+/* SEMBUNYIKAN LOGO POTRET AKSI ID */
+.logo {
+  display: none;
+}
+/* WRAPPER HEADER POSTER */
+.poster-header {
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+/* BARIS LOGO DI ATAS POSTER */
+.poster-header-top {
+  display: flex;
+  justify-content: flex-start; /* KIRI */
+  margin-bottom: 6px;          /* JARAK KE POSTER */
+}
+
+/* LOGO POTRET AKSI ID */
+.poster-header-logo {
+  width: 36px;
+  height: 36px;    /* RASIO 1:1 */
+  object-fit: contain;
+}
+
+/* POSTER */
+.hero-poster {
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* GAMBAR POSTER */
+.poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TOMBOL PLAY (TETAP SEPERTI SEBELUMNYA) */
+.hero-poster .play-btn {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.poster-header {
+  max-width: 420px;
+  margin: 0 auto 40px; /* center */
+}
+.poster-header-top {
+  padding-left: 12px; /* LOGO SAJA */
+}
+  </style>
+</head>
+<body>
+
+<header>
+    <header></header>
+  <div class="logo">POTRET AKSI ID</div>
+  <form id="searchForm" class="search-container" onsubmit="return false;">
+    <input type="text" id="searchInput" placeholder="Search movies..." aria-label="Search movies" />
+    <button type="submit" id="searchButton">Search</button>
+  </form>
+</header>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POTRET AKSI ID</title>
+
+  <!-- LINK KE CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POTRET AKSI ID</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hero">
+
+    <img src="searchinghdr.jpg" class="hero-img" alt="Poster Film">
+
+    <div class="hero-overlay">
+
+      <!-- GENRE -->
+      <p class="movie-genre">
+        Drama • Dokumenter • Ketegangan
+      </p>
+
+      <!-- TOMBOL -->
+      <div class="action-row">
+
+        <button class="icon-btn" id="likeBtn">
+          🤍
+          <span id="likeCount">0</span>
+        </button>
+
+        <a href="search 1full.html"
+           target="_blank"
+           class="play-btn">
+          ▶ PLAY
+        </a>
+
+        <button class="icon-btn">
+          ℹ
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<div id="mainContent">
+  <main>
+
+    <section data-category="Exciting viewing">
+      <h2>Exciting viewing</h2>
+      <div class="movie-row">
+        </a>
+        <a href="Merasukfilm.html" class="movie-item" data-title="Merasuk: first possession" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Merasukku.jpg" alt="Merasuk: first possession" />
+        </a>
+        <a href="leuweungfull.html" class="movie-item" data-title="Leuweung setan" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Leuweungku.jpg" alt="Leuweung setan" />
+        </a>
+        <a href="Search 1full.html" class="movie-item" data-title="Searching: First Case" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Searchingku.jpg" alt="Searching: First Case" />
+        </a>
+         <a href="leuweungfull.html" class="movie-item" data-title="penunggu dari kematian" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="penungguku.jpg" alt="penunggu dari kematian" />
+          </a>
+      </div>
+    </section>
+
+    <section data-category="Like to think?">
+      <h2>Like to think?</h2>
+      <div class="movie-row">
+        <a href="soonrek.html" class="movie-item" data-title="Gagabah: ucap laku lampah" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Gagabahku.jpg" alt="Gagabah: ucap laku lampah" />
+        </a>
+        <a href="soonrek.html" class="movie-item" data-title="Tertipu Muslihat" target="_blank" rel=noopener noreferrer" data-type="movie"> <img src="Tertipuku.jpg" alt="Tertipu muslihat" />
+        </a>
+        <a href="ningcomku.html" class="movie-item" data-title="Kembalinya ningrum" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Ningcomku.jpg" alt="Kembalinya ningrum" />
+        </a>
+           <a href="diaterpanggilfull.html" class="movie-item" data-title="Dia terpanggil" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Diaku.jpg" alt="Dia terpanggil" />
+        </a>
+      </div>
+      </section>
+    
+    <section data-category="Just added">
+      <h2>Just added</h2>
+      <div class="movie-row">
+        <a href="pertanyaan.html" class="movie-item" data-title="Pertanyaan dalam kubur" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="pertanyaaku.jpg" alt="Pertanyaan Dalam Kubur" />
+        </a>
+        <a href="siccinfull.html" class="movie-item" data-title="siccin" target="_blank" rel=noopener noreferrer" data-type="movie"> <img src="siccinposter.jpg" alt="siccin" />
+        </a>
+        <a href="schoolnightmare.html" class="movie-item" data-title="School Nightmare" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="schoolnightmareps.jpg" alt="school Nightmare" />
+        </a>
+        
+</div>
+</section>
+
+    <!-- More sections can be added similarly -->
+
+    <!-- Back Button Container on Main Page -->
+    <div class="back-button-container" id="mainBackContainer">
+      <button class="back-button" id="mainBackButton">Back</button>
+    </div>
+
+  </main>
+</div>
+
+<div id="episodePage">
+  <div class="episodes-grid" id="episodesGrid">
+    <!-- Episodes will be populated here -->
+  </div>
+  <!-- Back Button Container on Episode Page -->
+  <div class="back-button-container" id="episodeBackContainer">
+    <button class="back-button" id="episodeBackButton">Back</button>
+  </div>
+</div>
+
+<script>
+  // Search functionality
+  const searchButton = document.getElementById('searchButton');
+  const searchInput = document.getElementById('searchInput');
+  const mainBackContainer = document.getElementById('mainBackContainer');
+  const mainBackButton = document.getElementById('mainBackButton');
+  const allMovieItems = document.querySelectorAll('.movie-item');
+  const allSections = document.querySelectorAll('section');
+
+  function searchMovies() {
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (!query) {
+      allMovieItems.forEach(item => item.style.display = '');
+      allSections.forEach(section => section.style.display = '');
+      mainBackContainer.style.display = 'none';
+      return;
+    }
+
+    let hasResults = false;
+    allSections.forEach(section => {
+      let sectionHasMatch = false;
+      const items = section.querySelectorAll('.movie-item');
+      items.forEach(item => {
+        const title = item.getAttribute('data-title').toLowerCase();
+        if (title.includes(query)) {
+          item.style.display = '';
+          sectionHasMatch = true;
+          hasResults = true;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      section.style.display = sectionHasMatch ? '' : 'none';
+    });
+
+    // Show or hide the back button based on results
+    mainBackContainer.style.display = hasResults ? 'block' : 'none';
+  }
+
+  function resetSearch() {
+    searchInput.value = '';
+    allMovieItems.forEach(item => item.style.display = '');
+    allSections.forEach(section => section.style.display = '');
+    mainBackContainer.style.display = 'none';
+  }
+
+  searchButton.addEventListener('click', searchMovies);
+  searchInput.addEventListener('keyup', e => {
+    if (e.key === 'Enter') searchMovies();
+  });
+  mainBackButton.addEventListener('click', resetSearch);
+
+  // Series episode page functionality
+  const mainContent = document.getElementById('mainContent');
+  const episodePage = document.getElementById('episodePage');
+  const episodesGrid = document.getElementById('episodesGrid');
+  const episodeBackContainer = document.getElementById('episodeBackContainer');
+  const episodeBackButton = document.getElementById('episodeBackButton');
+
+  function showEpisodePage(seriesTitle, episodes) {
+    episodesGrid.innerHTML = '';
+
+    episodes.forEach(ep => {
+      const episodeDiv = document.createElement('div');
+      episodeDiv.className = 'episode-item';
+      episodeDiv.innerHTML = `
+        <img src="${ep.thumbnail}" alt="${ep.title}" class="episode-thumbnail" />
+        <div class="episode-info">
+          <div class="episode-title">${ep.title}</div>
+          <button class="play-button" data-url="${ep.url}">Play</button>
+        </div>
+      `;
+      episodesGrid.appendChild(episodeDiv);
+    });
+
+    mainContent.style.display = 'none';
+    episodePage.style.display = 'block';
+    episodeBackContainer.style.display = 'block';
+    mainBackContainer.style.display = 'none'; // Hide main back button when on episode page
+  }
+
+  function hideEpisodePage() {
+    episodePage.style.display = 'none';
+    mainContent.style.display = 'block';
+    episodeBackContainer.style.display = 'none';
+    // If search is active, show the main back button
+    if (searchInput.value.trim()) {
+      mainBackContainer.style.display = 'block';
+    }
+  }
+
+  episodeBackButton.addEventListener('click', hideEpisodePage);
+
+  // Handle clicks on movie/series items
+  document.querySelectorAll('.movie-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = item.getAttribute('data-type');
+      if (type === 'series') {
+        const seriesTitle = item.getAttribute('data-title');
+        const episodesJSON = item.getAttribute('data-episodes');
+        let episodes = [];
+        try {
+          episodes = JSON.parse(episodesJSON);
+        } catch (error) {
+          console.error('Invalid episodes JSON', error);
+          alert('Episodes information is unavailable.');
+          return;
+        }
+        showEpisodePage(seriesTitle, episodes);
+      } else if (type === 'movie') {
+        const url = item.getAttribute('href');
+        if (url) {
+          window.open(url, '_blank');
+        }
+      }
+    });
+  });
+
+  // Handle play button clicks on episode page
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('play-button')) {
+      const url = e.target.getAttribute('data-url');
+      if (url) {
+        window.open(url, '_blank');
+      }
+    }
+  });
+</script>
+          <!-- Navigasi Overlay -->
+<div class="nav-overlay">
+  <a href="potsiflix.html" target="_blank" class="nav-btn">
+    <img src="rumahku.png" alt="Home">
+  </a>
+  
+    <a href="searchpage.html" target="_blank" class="nav-btn">
+    <img src="Searchbtn.png" alt="Trending">
+  </a>
+
+  <a href="upcoming.html" target="_blank" class="nav-btn">
+    <img src="enyarrek.png" alt="Trending">
+  </a>
+
+  <a href="infopage.html" target="_blank" class="nav-btn">
+    <img src="inpone.png" alt="Profile">
+  </a>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile & More</title>
+
+<style>
+
+.logo-wrapper {
+  padding: 24px 0 10px 24px; /* atas | kanan | bawah | kiri */
+  text-align: left;
+}
+
+.brand-logo {
+  width: 80px;            /* ← UKURAN LOGO */
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+body {
+  margin: 0;
+  padding: 0 20px; /* ← INI YANG NAMBHAIN SPACE KANAN KIRI */
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+h1 {
+  margin: 40px 0;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.profile {
+  cursor: pointer;
+}
+
+.profile img {
+  width: 110px; /* ← perkecil di sini */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.profile p {
+  margin-top: 10px;
+}
+
+/* ACCORDION */
+.accordion {
+  max-width: 420px;
+  margin: auto;
+}
+
+.item {
+  background: #222;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.content {
+  display: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #222;
+  width: 240px; /* ← lebih kecil */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.modal-box button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#errorText {
+  color: red;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+    
+    <div class="logo-wrapper">
+  <img src="iconpotsiflixnew.jpg" class="brand-logo" alt="Potret Aksi ID">
+</div>
+
+<h1>Profile & More</h1>
+
+<div class="profile-container">
+  <div class="profile" onclick="openPin('general')">
+    <img src="generallogo.jpg">
+    <p>General</p>
+  </div>
+
+</div>
+
+<div class="accordion">
+  <div class="item">
+    <div class="header" onclick="toggleAccordion(0)">
+      <span>General</span>
+      <span>⌄</span>
+    </div>
+    <div class="content">
+      <p>Pin : 20224050</p>
+      <p>Note : For general audience</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="header" onclick="toggleAccordion(1)">
+      <span>Kids</span>
+      <span>⌄</span>
+    </div>
+    <div class="content">
+      <p>Pin : 20500890</p>
+      <p>Note : Shows for children and families</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PIN -->
+<div class="modal" id="pinModal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2>Enter Pin</h2>
+    <input type="password" id="pinInput" placeholder="Enter pin">
+    <p id="errorText"></p>
+    <button onclick="checkPin()">Next</button>
+  </div>
+</div>
+
+<script>
+let currentProfile = "";
+
+const data = {
+  general: {
+    pin: "20224050",
+    link: "potsiflix.html"
+  },
+  kids: {
+    pin: "20500890",
+    link: "https://youtube.com/kids"
+  }
+};
+
+function openPin(type) {
+  currentProfile = type;
+  document.getElementById("pinModal").style.display = "flex";
+  document.getElementById("pinInput").value = "";
+  document.getElementById("errorText").innerText = "";
+}
+
+function closeModal() {
+  document.getElementById("pinModal").style.display = "none";
+}
+
+function checkPin() {
+  const input = document.getElementById("pinInput").value;
+  if (input === data[currentProfile].pin) {
+    window.location.href = data[currentProfile].link;
+  } else {
+    document.getElementById("errorText").innerText =
+      "Your password is incorrect";
+  }
+}
+
+function toggleAccordion(index) {
+  const contents = document.querySelectorAll(".content");
+  contents[index].style.display =
+    contents[index].style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

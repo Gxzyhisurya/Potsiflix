@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player — Google Drive</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px;
+      padding-top: 28px;   /* space di atas */
+    }
+
+    /* video responsif + ada jarak kecil di atas */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: #000;
+    }
+
+    h1 {
+      margin: 14px 0 6px;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .tagline {
+      opacity: .85;
+      margin-bottom: 18px;
+    }
+
+    /* tombol back putih */
+    .back-btn {
+      display: block;
+      width: 100%;
+      background: #ffffff;
+      color: #000000;
+      text-align: center;
+      border-radius: 10px;
+      padding: 12px 0;
+      margin: 12px 0 22px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid #fff;
+    }
+
+    /* Movie grid */
+    .movie-row {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 60px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    .movie-row::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    /* Movie Item */
+    .movie-item {
+      flex: 0 0 auto;
+      width: 135px; /* 3:4 ratio */
+      aspect-ratio: 3 / 4;
+      margin-right: 10px;
+      cursor: pointer;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      box-shadow: 0 0 3px #000;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .movie-item:hover {
+      transform: scale(1.15);
+      z-index: 10;
+      box-shadow: 0 0 12px #e50914;
+    }
+    .movie-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+    .movie-label {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background-color: #e50914;
+      padding: 2px 6px;
+      font-size: 0.75em;
+      font-weight: bold;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+
+    .back-btn:hover {
+      opacity: .9;
+    }
+
+    p {
+      line-height: 1.55;
+    }
+
+    .meta {
+      margin-top: 14px;
+      margin-bottom: px; /* space setelah Production */
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false">
+
+  <div class="container">
+
+    <!-- VIDEO (Google Drive) -->
+    <div class="video-wrapper">
+      <iframe
+        src="https://jumpshare.com/embed/2rsUVGB7ZK8jPbiX2lxH"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div style="margin-top:14px;opacity:.9;">Movie</div>
+
+    <h1>Mati Di Malam Tahun Baru</h1>
+
+    <div class="tagline">Horor</div>
+
+    <!-- Tombol Back -->
+    <a class="back-btn" href="Potsiflix.html">
+      Back
+    </a>
+
+    <p>
+Ronald, seorang anak yang ditinggal dirumah sendirian saat malam pergantian tahun, mulai diganggu oleh entitas misterius.
+Arwah itu datang bukan karena dipanggil, tapi karena “ledakan petasan"
+    </p>
+
+    <div class="meta">
+      Cast : Yuniar Diansyah<br>
+      Directed : Yuniar Diansyah<br>
+      Production : Nadamaker Cinema
+    </div>
+<div id="mainContent">
+  <main>
+
+    <section data-category="You May Also Like">
+      <h2>You May Also Like</h2>
+      <div class="movie-row">
+        </a>
+        <a href="Merasukfilm.html" class="movie-item" data-title="Merasuk: First Possession" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Merasukku.jpg" alt="Merasuk: First Possession" />
+        </a>
+        <a href="soonrek.html" class="movie-item" data-title="Cemeng Wengi: leuweung setan the prequel" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Cemengku.jpg" alt="Cemeng wengi: leuweung setan the prequel" />
+        </a>
+        <a href="diaterpanggilfull.html" class="movie-item" data-title="Dia terpanggil" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="Diaku.jpg" alt="Dia terpanggil" />
+        </a>
+        <a href="soonrek.html" class="movie-item" data-title="Gagabah: Ucap laku lampah" target="_blank" rel="noopener noreferrer" data-type="movie">
+          <img src="gagabahku.jpg" alt="Gagabah: ucap laku lampah " />
+        </a>

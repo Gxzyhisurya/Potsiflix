@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Judul Film</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* ================= BACKGROUND ================= */
+.hero {
+  min-height: 100vh;
+  background: url("pertanyaanbg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center top; /* ⬅️ PENTING */
+}
+.overlay {
+  min-height: 100vh;
+  padding: 150px 20px 30px; /* ⬅️ SPACE ATAS JUDUL */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.85) 55%,
+    #000 100%
+  );
+}
+
+/* ================= JUDUL ================= */
+h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.credit {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+
+/* ================= GENRE ================= */
+.genre {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.genre span {
+  background: #e6eeff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ================= WATCH MOVIE ================= */
+.watch {
+  margin-bottom: 25px;
+}
+
+.watch h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ================= SINOPSIS ================= */
+.sinopsis {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+
+/* ================= PEMERAN ================= */
+h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.cast-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cast-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.cast-row::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+.cast-card {
+  min-width: 90px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cast-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+
+.cast-card p {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* ================= EPISODE ================= */
+.episode {
+  margin-top: 28px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.episode button {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+/* ================= BACK ================= */
+.back-btn {
+  margin-top: 35px;
+}
+
+.back-btn button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: none;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="overlay">
+
+    <!-- JUDUL -->
+    <h1>Pertanyaan Dalam Kubur</h1>
+    <div class="credit">
+      4 Minutes | Rating Usia 17+
+    </div>
+
+    <!-- GENRE -->
+    <div class="genre">
+      <span>Horor</span>
+      <span>Dokumenter</span>
+    </div>
+
+    <!-- WATCH MOVIE (SETELAH GENRE) -->
+    <div class="watch">
+      <h2>Watch Movie</h2>
+<div class="video-wrapper">
+  <iframe
+    src="https://drive.google.com/file/d/1_V6CwUcyWM41cLhKBo3GqY3QXeNV_gMK/preview"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+  </iframe>
+</div>
+    </div>
+
+    <!-- SINOPSIS -->
+    <div class="sinopsis">
+     Menceritakan tentang satu orang yang bernama Iman yang tidak mempunyai keyakinan terhadap agamanya terlebih dia tidak percaya terhadap adanya pertanyaan di dalam kubur kemudian dia mencoba membuktikannya namun terjadi sesuatu hal
+    </div>
+
+    <!-- PEMERAN -->
+    <h2>Pemeran</h2>
+    <div class="cast-row">
+      <div class="cast-card">
+        <img src="tidakadapp.png">
+        <p>Rezky Arraqqat</p>
+      </div>
+            <div class="cast-card">
+        <img src="tidakadapp.png">
+        <p>Rezky Arraqqat as Director</p>
+      </div>
+    </div>
+
+
+
+    <!-- BACK -->
+    <div class="back-btn">
+      <button onclick="location.href='potsiflix.html'">Back</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
